@@ -33,9 +33,9 @@ public class UserDaoImp implements UserDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    public User getUser() {
+    public User getUser(String model, int series) {
         Query queryCar = sessionFactory.openStatelessSession().
-                createQuery("SELECT a FROM User a INNER JOIN a.car c WHERE c.model = 'Москвич' and c.series = '65437'");
+                createQuery("SELECT a FROM User a INNER JOIN a.car c WHERE c.model = '" + model + "' and c.series = '" + series + "'");
         List<User> list = queryCar.getResultList();
         return list.get(0);
     }
