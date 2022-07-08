@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface UserDao {
-    public User getUser(int id);
+    public User getUser();
 
     void add(User user);
 
